@@ -1,0 +1,26 @@
+<?php
+ // module/Album/view/album/album/add.phtml:
+
+ $title = 'Register New Station';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <?php
+ $form->setAttribute('action', $this->url('station', array('action' => 'add')));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id'));
+ echo $this->formHidden($form->get('created_by')->setvalue('3'));
+ echo $this->formHidden($form->get('created_when'));
+ echo $this->formHidden($form->get('modify_by'));
+ echo $this->formHidden($form->get('modify_when'));
+ echo $this->formRow($form->get('station_name'));
+ echo $this->formRow($form->get('station_address'));
+ echo $this->formRow($form->get('station_province'));
+ echo $this->formRow($form->get('station_amphur'));
+ echo $this->formRow($form->get('contact_person'));
+ echo $this->formRow($form->get('telephone'));
+ echo $this->formRow($form->get('register_ip'));
+ echo $this->formSubmit($form->get('submit'));
+ echo $this->form()->closeTag();

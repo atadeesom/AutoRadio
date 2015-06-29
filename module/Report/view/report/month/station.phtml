@@ -1,0 +1,33 @@
+<?php
+
+if($station != null) {
+//    echo '<pre>';
+//    var_dump($station);
+//    exit();
+$title = 'Monthly Report Of '.$station->station_name.' in '.$this->escapeHtml($month);
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p><?php echo 'Station ID : '.$this->escapeHtml($station->station_name); ?></p>
+ <p><?php echo 'Amount of Landed IP: '.count($ipaddresses).' times';?></p>
+ 
+ <a href='/report/index'>Back</a>
+ <table class="table">
+ <tr>
+     <th>IP</th>
+     <th>In</th>
+     <th>Out</th>
+ </tr>
+ <?php foreach ($ipaddresses as $ipaddress) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($ipaddress->ip_address);?></td>
+     <td><?php echo $this->escapeHtml($ipaddress->created_when);?></td>
+     <td><?php echo $this->escapeHtml($ipaddress->end_when);?></td>
+
+ </tr>
+ <?php endforeach; ?>
+ </table>
+ 
+<?php } else { 
+ echo '<p>Incorrect Station ID</p>';
+} ?>

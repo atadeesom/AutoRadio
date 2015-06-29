@@ -1,0 +1,31 @@
+<?php
+
+$title = 'Station';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('station', array('action'=>'add'));?>">Add new station</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Station</th>
+     <th>Contact Person</th>
+     <th>Telephone</th>
+     <th>IP</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($stations as $station) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($station->station_name);?></td>
+     <td><?php echo $this->escapeHtml($station->contact_person);?></td>
+     <td><?php echo $this->escapeHtml($station->telephone);?></td>
+     <td><?php echo $this->escapeHtml($station->register_ip);?></td>
+     <td>
+         <a href="<?php echo $this->url('station',
+             array('action'=>'edit', 'id' => $station->id));?>">Manage</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
