@@ -26,6 +26,7 @@ class IPAddressTable {
      {
          $data = array(
              'ip_address' => $ipaddress->ip_address,
+             'ip_city' => $ipaddress->ip_city,
              'station_code' => $ipaddress->station_code,
              'is_landed'  => $ipaddress->is_landed,
              'created_when' => $ipaddress->created_when,

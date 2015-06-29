@@ -16,6 +16,7 @@ namespace Api\Model;
 class IPAddress {
     public $id;
     public $ip_address;
+    public $ip_city;
     public $station_code;
     public $is_landed;
     public $created_when;
@@ -25,6 +26,7 @@ class IPAddress {
     public function exchangeArray($data){
         $this->id = (!empty($data['id'])) ? $data['id'] : null;
         $this->ip_address = (!empty($data['ip_address'])) ? $data['ip_address'] : null;
+        $this->ip_city = (!empty($data['ip_city'])) ? $data['ip_city'] : null; 
         $this->station_code = (!empty($data['station_code'])) ? $data['station_code'] : null;
         $this->is_landed = (!empty($data['is_landed'])) ? $data['is_landed'] : null;
         $this->created_when = (!empty($data['created_when'])) ? $data['created_when'] : null;

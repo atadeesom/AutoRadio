@@ -31,16 +31,17 @@ $title = 'Monthly Report';
  <table class="table">
  <tr>
      <th>IP</th>
+     <th>Station</th>
      <th>City</th>
-     <th>In</th>
-     <th>Out</th>
+     <th>Land Time</th>
+     
  </tr>
  <?php foreach ($ipaddresses as $ipaddress) : ?>
  <tr>
      <td><?php echo $this->escapeHtml($ipaddress->ip_address);?></td>
+     <td><?php echo $this->escapeHtml($ipaddress->station_code);?></td>
      <td><?php echo $this->escapeHtml($ipaddress->ip_city);?></td>
      <td><?php echo $this->escapeHtml($ipaddress->created_when);?></td>
-     <td><?php echo $this->escapeHtml($ipaddress->end_when);?></td>
  </tr>
  <?php endforeach; ?>
  </table>

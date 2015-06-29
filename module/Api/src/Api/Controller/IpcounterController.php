@@ -56,6 +56,7 @@ class IpcounterController extends AbstractActionController
     {
         $ipaddress = new IPAddress();
         $ipaddress->station_code = $request->getPost('id', null);
+        $ipaddress->ip_city = $request->getPost('ip_city', null);
         $ipaddress->ip_address = $request->getPost('ip', null);
         $ipaddress->is_landed = $request->getPost('is_landed', null);
         $ipaddress->created_by = 4; // API
