@@ -43,6 +43,14 @@ class StationForm extends Form{
          ));
          
          $this->add(array(
+             'name' => 'station_code',
+             'type' => 'Text',
+             'options' => array(
+                 'label' => 'Station Code',
+             ),
+         ));
+         
+         $this->add(array(
              'name' => 'station_address',
              'type' => 'Textarea',
              'options' => array(

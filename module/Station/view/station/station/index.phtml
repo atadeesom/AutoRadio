@@ -10,6 +10,7 @@ $title = 'Station';
 
  <table class="table">
  <tr>
+     <th>Code</th>
      <th>Station</th>
      <th>Contact Person</th>
      <th>Telephone</th>
@@ -18,6 +19,7 @@ $title = 'Station';
  </tr>
  <?php foreach ($stations as $station) : ?>
  <tr>
+     <td><?php echo $this->escapeHtml($station->station_code); ?></td>
      <td><?php echo $this->escapeHtml($station->station_name);?></td>
      <td><?php echo $this->escapeHtml($station->contact_person);?></td>
      <td><?php echo $this->escapeHtml($station->telephone);?></td>

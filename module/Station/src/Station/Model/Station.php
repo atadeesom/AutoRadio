@@ -20,6 +20,7 @@ namespace Station\Model;
  */
 class Station implements InputFilterAwareInterface{
      public $id;
+     public $station_code;
      public $station_name;
      public $station_address;
      public $station_province;
@@ -37,6 +38,7 @@ class Station implements InputFilterAwareInterface{
      public function exchangeArray($data)
      {  
          $this->id   = (!empty($data['id'])) ? $data['id'] : null;
+         $this->station_code = (!empty($data['station_code'])) ? $data['station_code'] : null;
          $this->station_name = (!empty($data['station_name'])) ? $data['station_name'] : null;
          $this->station_address  = (!empty($data['station_address'])) ? $data['station_address'] : null;
          $this->station_province = (!empty($data['station_province'])) ? $data['station_province'] : 0;

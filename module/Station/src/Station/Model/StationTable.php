@@ -44,6 +44,7 @@ class StationTable {
      {
          $data = array(
              'station_name' => $station->station_name,
+             'station_code' => $station->station_code,
              'station_address'  => $station->station_address,
              'station_province' => $station->station_province,
              'station_amphur' => $station->station_amphur,
